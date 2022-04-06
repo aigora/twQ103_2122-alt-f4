@@ -2,7 +2,7 @@
 
 #include<stdio.h>
 #include<windows.h>
-#define TAM 100
+#define TAM_MAX 100
 #define color SetConsoleTextAttribute
 
 
@@ -13,7 +13,7 @@ struct TJugador{
 int main(){
 
 int jug,i;
-struct TJugador jugador[TAM];
+struct TJugador jugador[TAM_MAX];
 
 HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 color(hConsole,3);
@@ -40,13 +40,13 @@ printf("De acuerdo.\n");
 for(i=0;i<jug;i++){
     printf("Indique su nombre, jugador %d\n",i+1);
     fflush(stdin);
-    scanf("%s",&jugador[i].nombre);
+    scanf("%c", jugador[i].nombre);
 }
 
-printf("%s\n",jugador[i].nombre);
+printf("%c\n",jugador[i].nombre);
 
 
-
+printf("prueba");
 
 
 
