@@ -13,7 +13,7 @@ struct TJugador{
 int main(){
 
 int jug,i;
-char res1[50];
+char res1, res2;
 struct TJugador jugador[TAM_MAX];
 
 HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -47,13 +47,17 @@ for(i=0;i<jug;i++){
 for(i=0;i<jug;i++){
     printf("Jugador %d: %s\n",i+1,jugador[i].nombre);
 }
-
+do{
 printf("Son correctos estos nombres?\n");
+fflush(stdin);
 scanf("%s", &res1);
 
-if(res1 == 'si' || res1 == 'Si' || res1 == 'SI' || res1 == 'sI'){
+switch(res1) {
+    case 'si':
     printf("Nombres guardados.\n");
-}   else {
+    break;
+
+    case 'no':
     printf("Indique el numero del jugador que quiere cambiar el nombre:\n");
     scanf("%d", &i);
     printf("Indique el nuevo nombre del jugador %d\n",i);
@@ -61,9 +65,16 @@ if(res1 == 'si' || res1 == 'Si' || res1 == 'SI' || res1 == 'sI'){
     for(i=0;i<jug;i++){
     printf("Jugador %d: %s\n",i+1,jugador[i].nombre);
 }
+    break;
+}
 }
 
-printf("Perfecto")
+printf("Perfecto, elija el nivel de dificultad.\n");
+printf("A - Facil.\n");
+printf("B - Dificil.\n");
+scanf("%s", &res2);
+
+printf("%s", res2);
 
 
 return 0;
