@@ -7,7 +7,7 @@
 
 
 struct TJugador{
-    char nombre;
+    char nombre[50];
 
 };
 int main(){
@@ -40,13 +40,8 @@ printf("De acuerdo.\n");
 for(i=0;i<jug;i++){
     printf("Indique su nombre, jugador %d\n",i+1);
     fflush(stdin);
-    scanf("%c", jugador[i].nombre);
+    scanf("%s", &jugador[i].nombre);
 }
-
-printf("%c\n",jugador[i].nombre);
-
-
-printf("prueba");
 
 
 
