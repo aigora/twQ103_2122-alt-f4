@@ -69,7 +69,7 @@ switch(res1) {
 }
 }
 
-printf("Perfecto, elija el nivel de dificultad.\n");
+printf("Perfecto, elija un nivel de dificultad.\n");
 printf("A - Facil.\n");
 printf("B - Dificil.\n");
 scanf("%s", &res2);
