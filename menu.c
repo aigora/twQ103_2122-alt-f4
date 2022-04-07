@@ -17,8 +17,10 @@ char res1, res2;
 struct TJugador jugador[TAM_MAX];
 
 HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+color(hConsole,190);
+printf("\n\n\t\t\t TRIVIAL BY ALT-F4");
+printf("\t\t\t -----------------\n");
 color(hConsole,3);
-printf("Bienvendo al mejor juego de preguntas que se puede encontrar, aqui te presentamos las normas:\n");
 printf("1- El juego consiste en avanzar respondiendo preguntas. Si aciertas avanzas a la siguiente pregunta y consigues una 'peseta', por el contrario si falla se le quitara una 'peseta'.\n");
 printf("2- Debe responder antes de que se acabe el tiempo, si no contesta en el tiempo permitido se considerara como fallida.\n");
 printf("3- Con las 'pesetas' podra comprar comodines para utilizarlos en las preguntas.\n");
@@ -27,6 +29,7 @@ printf("5- Si se queda sin monedas pierde automaticamente.\n");
 printf("6- El jugador que consiga responder todas las preguntas primero es el ganador.\n");
 printf(" \n");
 
+color(hConsole,6);
 printf("Cuantos jugadores son? El maximo de jugadores es 4.\n");
 scanf("%d",&jug);
 
@@ -68,7 +71,7 @@ switch(res1) {
     break;
 }
 }
-
+color(hConsole,55);
 printf("Perfecto, elija un nivel de dificultad.\n");
 printf("A - Facil.\n");
 printf("B - Dificil.\n");
