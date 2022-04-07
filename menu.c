@@ -3,7 +3,7 @@
 #include<stdio.h>
 #include<windows.h>
 #define TAM_MAX 100
-#define color SetConsoleTextAttribute
+#define color SetConsoleAtributte
 
 
 struct TJugador{
