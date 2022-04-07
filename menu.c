@@ -18,7 +18,7 @@ struct TJugador jugador[TAM_MAX];
 
 HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 color(hConsole,190);
-printf("\n\n\t\t\t TRIVIAL BY ALT-F4");
+printf("\n\n\t\t\t TRIVIAL BY ALT-F4\n");
 printf("\t\t\t -----------------\n");
 color(hConsole,3);
 printf("1- El juego consiste en avanzar respondiendo preguntas. Si aciertas avanzas a la siguiente pregunta y consigues una 'peseta', por el contrario si falla se le quitara una 'peseta'.\n");
