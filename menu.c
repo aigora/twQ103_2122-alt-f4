@@ -1,14 +1,14 @@
 //Menu del trivial del grupo ALT-F4
 #include<stdio.h>
 #include<windows.h>
-//#include <iostream>
+#include <iostream>
 #define TAM_MAX 100
-#define color SetConsoleTextAttribute// Para que simplemente pongamos color cada vez que cambiemos el oclor del texto
+#define color SetConsoleTextAttribute// Para que simplemente pongamos color cada vez que cambiemos el color del texto
 void preguntas();
-//struct preguntas{
-    //int Rcorrecta;
-   // string pregunta, respuestaA, respuestaB,respuestaC,respuestaD;   Esta en comentarios porque no tengo ni idea de porque no funciona iostream, si sabeis algo de lujo chavales
-//}p[20];//No se cuantas preguntas haremos, pero pongo 20 por poner un numero
+struct preguntas{
+int Rcorrecta;
+  string pregunta, respuestaA, respuestaB,respuestaC,respuestaD;
+}p[20];//No se cuantas preguntas haremos, pero pongo 20 por poner un numero
 struct TJugador{
     char nombre[50];
 };
@@ -16,14 +16,16 @@ struct TJugador{
 int main(){
 
 //preguntas();
-int jug,i,peseta,dificultad;
-char res1,res2,b1;
+int res1,jug,i,peseta,dificultad;
+char res2,b1;
 struct TJugador jugador[TAM_MAX];
 
 HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);//El handle funciona haciendo referencia a un bloque de memoria, en este caso  a hConsole(es el que da colores al texto).
 color(hConsole,190);
-printf("\n\n\t\t\t\t\tTRIVIAL BY ALT-F4\n");
-printf("\t\t\t\t\t-----------------\n");
+printf("\n\n\t\t\t\t\t\t\tTRIVIAL BY ALT-F4\n");
+printf("\t\t\t\t\t\t\t-----------------\n");
+color(hConsole,7);
+printf("NORMAS:\n");
 color(hConsole,3);
 printf("1- El juego consiste en avanzar respondiendo preguntas. Si aciertas avanzas a la siguiente pregunta y consigues una 'peseta', por el contrario si falla se le quitara una 'peseta'.\n");
 printf("2- Debe responder antes de que se acabe el tiempo, si no contesta en el tiempo permitido se considerara como fallida.\n");
@@ -55,18 +57,21 @@ for(i=0;i<jug;i++){
 for(i=0;i<jug;i++){
     printf("Jugador %d: %s\n",i+1,jugador[i].nombre);
 }
-printf("¿Son correctos los nombres?\n");
+
+printf("¿Son correctos los nombres? Pon 0 si es que si y 1 si es que no.\n");
+fflush(stdin);
 scanf("%s", &res1);
-if(res1=='no'){
+
+if(res1 == 0){
+printf("Perfecto, nombres guardados.\n");
+} else{
     printf("Indique el numero del jugador que quiere cambiar el nombre:\n");
     scanf("%d", &i);
     printf("Indique el nuevo nombre del jugador %d\n",i);
     scanf("%s", &jugador[i-1].nombre);
     printf("Perfecto.Elija la dificultad.\n");
 }
-else{
-    printf("Perfecto.Elija la dificultad.\n");
-}
+
 printf("Pon 0 si quieres jugar en modalidad facil, pon 1 si quieres jugar en dificil:\n");
 scanf("%d", &dificultad);
 if(dificultad==0){
@@ -77,15 +82,14 @@ else if(dificultad==1){
 }
 printf("Hagamos una prueba:\n");
 color(hConsole,10);
-//void preguntas(){
-//p[0].pregunta = "¿Cuantos años duro la Segunda Guerra Mundial";
-//p[0].respuestaA= "A-5";
-//p[0].respuestaB= "B-6";
-//p[0].respuestaC= "C-7";
-//p[0].respuestaD= "D-4";
-//p[0].Rcorrecta= B;
-
-
+void preguntas(){
+p[0].pregunta = "¿Cuantos años duro la Segunda Guerra Mundial";
+p[0].respuestaA= "A-5";
+p[0].respuestaB= "B-6";
+p[0].respuestaC= "C-7";
+p[0].respuestaD= "D-4";
+p[0].Rcorrecta= B;
+}
 printf("Siguiente pregunta.\n");
 return 0;
 }
