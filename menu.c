@@ -7,7 +7,7 @@
 void preguntas();
 //struct preguntas{
     //int Rcorrecta;
-   // string pregunta, respuestaA, respuestaB,respuestaC,respuestaD;
+   // string pregunta, respuestaA, respuestaB,respuestaC,respuestaD;   Esta en comentarios porque no tengo ni idea de porque no funciona iostream, si sabeis algo de lujo chavales
 //}p[20];//No se cuantas preguntas haremos, pero pongo 20 por poner un numero
 struct TJugador{
     char nombre[50];
