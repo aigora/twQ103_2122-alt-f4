@@ -13,7 +13,7 @@ struct TJugador{
     char nombre[50];
 };
 
-menu(){
+int main(){
 
 //preguntas();
 int jug,i,peseta,dificultad;
@@ -57,7 +57,7 @@ for(i=0;i<jug;i++){
 }
 printf("¿Son correctos los nombres?\n");
 scanf("%s", &res1);
-if(res1=='no' || 'NO' || 'No' || 'nO'){
+if(res1=='no'){
     printf("Indique el numero del jugador que quiere cambiar el nombre:\n");
     scanf("%d", &i);
     printf("Indique el nuevo nombre del jugador %d\n",i);
@@ -69,10 +69,10 @@ else{
 }
 printf("Pon 0 si quieres jugar en modalidad facil, pon 1 si quieres jugar en dificil:\n");
 scanf("%d", &dificultad);
-if(dificultad=0){
+if(dificultad==0){
     printf("Usted ha elegido modalidad facil. Todos los jugadores tienen 5 pesetas al inicio del juego.\n");
 }
-else if(dificultad=1){
+else if(dificultad==1){
     printf("Usted ha elegido modalidad dificil. Todos los jugadores tienen 3 pesetas al inicio del juego.\n");
 }
 printf("Hagamos una prueba:\n");
