@@ -1,13 +1,11 @@
 //Menu del trivial del grupo ALT-F4
 #include<stdio.h>
 #include<windows.h>
-#include <iostream>
 #define TAM_MAX 100
 #define color SetConsoleTextAttribute// Para que simplemente pongamos color cada vez que cambiemos el color del texto
 void preguntas();
 struct preguntas{
-int Rcorrecta;
-  string pregunta, respuestaA, respuestaB,respuestaC,respuestaD;
+  char pregunta[100], respuestaA[100], respuestaB[100],respuestaC[100],respuestaD[100],Rcorrecta;
 }p[20];//No se cuantas preguntas haremos, pero pongo 20 por poner un numero
 struct TJugador{
     char nombre[50];
@@ -15,7 +13,7 @@ struct TJugador{
 
 int main(){
 
-//preguntas();
+preguntas();
 int res1,jug,i,peseta,dificultad;
 char res2,b1;
 struct TJugador jugador[TAM_MAX];
@@ -59,7 +57,6 @@ for(i=0;i<jug;i++){
 }
 
 printf("¿Son correctos los nombres? Pon 0 si es que si y 1 si es que no.\n");
-fflush(stdin);
 scanf("%s", &res1);
 
 if(res1 == 0){
@@ -82,6 +79,10 @@ else if(dificultad==1){
 }
 printf("Hagamos una prueba:\n");
 color(hConsole,10);
+
+printf("Siguiente pregunta.\n");
+return 0;
+}
 void preguntas(){
 p[0].pregunta = "¿Cuantos años duro la Segunda Guerra Mundial";
 p[0].respuestaA= "A-5";
@@ -89,7 +90,4 @@ p[0].respuestaB= "B-6";
 p[0].respuestaC= "C-7";
 p[0].respuestaD= "D-4";
 p[0].Rcorrecta= B;
-}
-printf("Siguiente pregunta.\n");
-return 0;
 }
