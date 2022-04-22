@@ -1,21 +1,22 @@
 //Menu del trivial del grupo ALT-F4
 #include<stdio.h>
 #include<windows.h>
-#define TAM_MAX 100
+#define TAM_MAX 300
 #define color SetConsoleTextAttribute// Para que simplemente pongamos color cada vez que cambiemos el color del texto
-void preguntas();
-struct preguntas{
-  char pregunta[100], respuestaA[100], respuestaB[100],respuestaC[100],respuestaD[100],Rcorrecta;
-}p[20];//No se cuantas preguntas haremos, pero pongo 20 por poner un numero
+struct TPreguntas{
+  char pregunta[100], respuesta[100];
+  int puntos;
+};
 struct TJugador{
     char nombre[50];
 };
 
 int main(){
 
-preguntas();
+struct TPreguntas preguntas[TAM_MAX];
 int res1,jug,i,peseta,dificultad;
-char res2,b1;
+int puntos[jug], contador=0;
+char res2,b1, respuesta;
 struct TJugador jugador[TAM_MAX];
 
 HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);//El handle funciona haciendo referencia a un bloque de memoria, en este caso  a hConsole(es el que da colores al texto).
@@ -49,23 +50,26 @@ printf("De acuerdo.\n");
 for(i=0;i<jug;i++){
     printf("Indique su nombre, jugador %d\n",i+1);
     fflush(stdin);
-    scanf("%s", &jugador[i].nombre);
+    gets(jugador[i].nombre);
 }
 
 for(i=0;i<jug;i++){
     printf("Jugador %d: %s\n",i+1,jugador[i].nombre);
 }
 
-printf("¿Son correctos los nombres? Pon 0 si es que si y 1 si es que no.\n");
-scanf("%s", &res1);
+printf("Son correctos los nombres? Pon 0 si es que si y 1 si es que no.\n");
+fflush(stdin);
+scanf("%d",&res1);
 
 if(res1 == 0){
 printf("Perfecto, nombres guardados.\n");
 } else{
     printf("Indique el numero del jugador que quiere cambiar el nombre:\n");
+    fflush(stdin);
     scanf("%d", &i);
     printf("Indique el nuevo nombre del jugador %d\n",i);
     scanf("%s", &jugador[i-1].nombre);
+    fflush(stdin);
     printf("Perfecto.Elija la dificultad.\n");
 }
 
@@ -80,14 +84,29 @@ else if(dificultad==1){
 printf("Hagamos una prueba:\n");
 color(hConsole,10);
 
+printf("Cuantos anios duro la segunda guerra mundial?\n");
+printf("A - 3.\n");
+printf("B - 6.\n");
+printf("C - 5.\n");
+printf("D - 11.\n");
+
+for(i=0;i<jug;i++){
+    printf("Jugador %d, elija su respuesta:\n", i+1);
+    fflush(stdin);
+    scanf("%s", preguntas[i].respuesta);
+    printf("Respuesta jugador %d: %s\n", i+1, preguntas[i].respuesta);
+    preguntas[i].puntos=0;
+    if(preguntas[i].respuesta == 66){
+        preguntas[i].puntos++;
+    }
+}
+
+printf("La respuesta correcta era la B.\n");
+
+printf("Actualizacion de puntuaciones:\n");
+for(i=0;i<jug;i++){
+    printf("%s %d\n", jugador[i].nombre, preguntas[i].puntos);
+}
 printf("Siguiente pregunta.\n");
 return 0;
-}
-void preguntas(){
-p[0].pregunta = "¿Cuantos años duro la Segunda Guerra Mundial";
-p[0].respuestaA= "A-5";
-p[0].respuestaB= "B-6";
-p[0].respuestaC= "C-7";
-p[0].respuestaD= "D-4";
-p[0].Rcorrecta= B;
 }
