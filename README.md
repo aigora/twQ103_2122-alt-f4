@@ -1,11 +1,11 @@
-# [Título del trabajo]
+##Nombre del grupo
+TRIVIAL ALT-F4
 
-[Descripción breve del proyecto a realizar (2-3 frases).]
+##Descripcion del trabajo
+El trabajo trata sobre un juego del tipo preguntas y repuestas, un trivial.  Los jugadore  tendrán que ir avanzando y ganand más y más "pesetas"para poder ganar y elegir el premio que puedan costearse. Los jugadores que se queden sin "pesetas" serán eliminados.
 
-## Integrantes del equipo
-Luis Miguel F  Fonfría Gutiérrez de Tena, Mario Calderón Santaolaria,
-Adrián Mier Moreno,[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.
+##Integrantes del grupo
+Adrián Mier Moreno, adrayaaan, Luis Miguel Fonfría G. de Tena,  luismifgdt, Mario Calderón Santaolaria
 
 ## Objetivos del trabajo
-
-[Lista de los objetivos que se persiguen con el trabajo propuesto.]
+Sistema multijugador, acomulación de puntos ("pesetas"),  creativida en las preguntas.
