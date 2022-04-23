@@ -27,12 +27,11 @@ color(hConsole,7);
 printf("NORMAS:\n");
 color(hConsole,3);
 printf("1- El juego consiste en avanzar respondiendo preguntas. Si aciertas avanzas a la siguiente pregunta y consigues una 'peseta', por el contrario si falla se le quitara una 'peseta'.\n");
-printf("2- Debe responder antes de que se acabe el tiempo, si no contesta en el tiempo permitido se considerara como fallida.\n");
-printf("3- Con las 'pesetas' podra comprar comodines para utilizarlos en las preguntas.\n");
-printf("4- Se le daran una serie de opciones con una letra representando a cada una, su respuesta debe ser dicha letra y en mayuscula.\n");
-printf("5- Todos los jugadores empiezan con 5 'pesetas' en la modalidad de juego facil y con 3 en la dificil.\n");
-printf("6- Si se queda sin pesetas pierde automaticamente.\n");
-printf("7- El jugador que consiga responder todas las preguntas primero es el ganador.\n");
+printf("2- Con las 'pesetas' podra comprar comodines para utilizarlos en las preguntas.\n");
+printf("3- Se le daran una serie de opciones con una letra representando a cada una, su respuesta debe ser dicha letra y en mayuscula.\n");
+printf("4- Todos los jugadores empiezan con 5 'pesetas' en la modalidad de juego facil y con 3 en la dificil.\n");
+printf("5- Si se queda sin pesetas pierde automaticamente.\n");
+printf("6- El jugador que consiga responder todas las preguntas primero es el ganador.\n");
 printf(" \n");
 
 color(hConsole,6);
@@ -94,13 +93,14 @@ for(i=0;i<jug;i++){
     printf("Jugador %d, elija su respuesta:\n", i+1);
     fflush(stdin);
     scanf("%s", preguntas[i].respuesta);
-    printf("Respuesta jugador %d: %s\n", i+1, preguntas[i].respuesta);
+    printf("Respuesta de %s es: %s\n", jugador[i].nombre,preguntas[i].respuesta);
     preguntas[i].puntos=0;
-    if(preguntas[i].respuesta == 66){
-        preguntas[i].puntos++;
+}
+for(i=0;i<jug;i++){
+if(preguntas[i].respuesta == 'B'){
+        preguntas[i].puntos=preguntas[i].puntos+1;
     }
 }
-
 printf("La respuesta correcta era la B.\n");
 
 printf("Actualizacion de puntuaciones:\n");
