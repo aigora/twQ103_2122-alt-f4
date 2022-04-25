@@ -14,16 +14,26 @@ struct TJugador{
 int main(){
 
 struct TPreguntas preguntas[TAM_MAX] = {"Cuantos anios duro la segunda guerra mundial?","B", 1};
-int res1,jug,i,peseta,dificultad;
+int res1,jug,i,peseta,dificultad,opc;
 int puntos[jug], contador=0;
 char res2,b1, respuesta;
 struct TJugador jugador[TAM_MAX];
 
 HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);//El handle funciona haciendo referencia a un bloque de memoria, en este caso  a hConsole(es el que da colores al texto).
 color(hConsole,190);
-printf("\n\n\t\t\t\t\t\t\tTRIVIAL BY ALT-F4\n");
-printf("\t\t\t\t\t\t\t-----------------\n");
-color(hConsole,7);
+printf("\t\t\t\t\t\t\t\t***********************************");
+printf("\n\t\t\t\t\t\t\t\t\tTRIVIAL BY ALT-F4\n");
+printf("\t\t\t\t\t\t\t\t\t*****************\n");
+color(hConsole, 3);
+printf("MENU DE OPCIONES==>\n");
+printf("1)LEER LAS NORMAS\n");
+printf("2)EMPEZAR UNA PARTIDA\n");
+printf("Escoga una opcion:\n");
+scanf("%d", &opc);
+
+switch(opc){
+case 1:
+    color(hConsole,7);
 printf("NORMAS:\n");
 color(hConsole,3);
 printf("1- El juego consiste en avanzar respondiendo preguntas. Si aciertas avanzas a la siguiente pregunta y consigues una 'peseta', por el contrario si falla se le quitara una 'peseta'.\n");
@@ -33,8 +43,9 @@ printf("4- Todos los jugadores empiezan con 5 'pesetas' en la modalidad de juego
 printf("5- Si se queda sin pesetas pierde automaticamente.\n");
 printf("6- El jugador que consiga responder todas las preguntas primero es el ganador.\n");
 printf(" \n");
-
-color(hConsole,6);
+break;
+case 2:
+    color(hConsole,6);
 printf("Cuantos jugadores son? El maximo de jugadores es 4.\n");
 scanf("%d",&jug);
 
@@ -108,5 +119,7 @@ for(i=0;i<jug;i++){
     printf("%s %d\n", jugador[i].nombre, preguntas[i].puntos);
 }
 printf("Siguiente pregunta.\n");
+break;
+}
 return 0;
 }
