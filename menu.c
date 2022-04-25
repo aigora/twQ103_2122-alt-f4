@@ -13,7 +13,7 @@ struct TJugador{
 
 int main(){
 
-struct TPreguntas preguntas[TAM_MAX];
+struct TPreguntas preguntas[TAM_MAX] = {"Cuantos anios duro la segunda guerra mundial?","B", 1};
 int res1,jug,i,peseta,dificultad;
 int puntos[jug], contador=0;
 char res2,b1, respuesta;
@@ -92,18 +92,18 @@ printf("D - 11.\n");
 for(i=0;i<jug;i++){
     printf("Jugador %d, elija su respuesta:\n", i+1);
     fflush(stdin);
-    scanf("%s", preguntas[i].respuesta);
+    gets(preguntas[i].respuesta);
     printf("Respuesta de %s es: %s\n", jugador[i].nombre,preguntas[i].respuesta);
-    preguntas[i].puntos=0;
 }
+
 for(i=0;i<jug;i++){
 if(preguntas[i].respuesta == 'B'){
-        preguntas[i].puntos=preguntas[i].puntos+1;
+        contador=preguntas[i].puntos;
     }
 }
 printf("La respuesta correcta era la B.\n");
 
-printf("Actualizacion de puntuaciones:\n");
+printf("Actualizacion de puntuaciones:\n\n");
 for(i=0;i<jug;i++){
     printf("%s %d\n", jugador[i].nombre, preguntas[i].puntos);
 }
