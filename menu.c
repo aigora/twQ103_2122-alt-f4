@@ -21,9 +21,9 @@ struct TJugador jugador[TAM_MAX];
 
 HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);//El handle funciona haciendo referencia a un bloque de memoria, en este caso  a hConsole(es el que da colores al texto).
 color(hConsole,190);
-printf("\t\t\t\t\t\t\t\t***********************************");
-printf("\n\t\t\t\t\t\t\t\t\tTRIVIAL BY ALT-F4\n");
-printf("\t\t\t\t\t\t\t\t\t*****************\n");
+printf("\t\t\t\t\t\t\t\t\t*******************");
+printf("\n\t\t\t\t\t\t\t\t\t|TRIVIAL BY ALT-F4|\n");
+printf("\t\t\t\t\t\t\t\t\t*******************\n");
 color(hConsole, 3);
 printf("MENU DE OPCIONES==>\n");
 printf("1)LEER LAS NORMAS\n");
@@ -35,7 +35,7 @@ switch(opc){
 case 1:
     color(hConsole,7);
 printf("NORMAS:\n");
-color(hConsole,3);
+color(hConsole,10);
 printf("1- El juego consiste en avanzar respondiendo preguntas. Si aciertas avanzas a la siguiente pregunta y consigues una 'peseta', por el contrario si falla se le quitara una 'peseta'.\n");
 printf("2- Con las 'pesetas' podra comprar comodines para utilizarlos en las preguntas.\n");
 printf("3- Se le daran una serie de opciones con una letra representando a cada una, su respuesta debe ser dicha letra y en mayuscula.\n");
@@ -109,7 +109,7 @@ for(i=0;i<jug;i++){
 
 for(i=0;i<jug;i++){
 if(preguntas[i].respuesta == 'B'){
-        contador=preguntas[i].puntos;
+        contador=preguntas[i].puntos++;
     }
 }
 printf("La respuesta correcta era la B.\n");
@@ -119,6 +119,32 @@ for(i=0;i<jug;i++){
     printf("%s %d\n", jugador[i].nombre, preguntas[i].puntos);
 }
 printf("Siguiente pregunta.\n");
+
+printf("Cuales son los colores primarios:\n");
+printf("A - Azul, amarillo, rojo.\n");
+printf("B - Blanco, negro, gris.\n");
+printf("C - Amarillo, verde, cian.\n");
+printf("D - Magenta, cian, amarillos.\n");
+
+for(i=0;i<jug;i++){
+    printf("Jugador %d, elija su respuesta:\n", i+1);
+    fflush(stdin);
+    gets(preguntas[i].respuesta);
+    printf("Respuesta de %s es: %s\n", jugador[i].nombre,preguntas[i].respuesta);
+}
+for(i=0;i<jug;i++){
+if(preguntas[i].respuesta == 'D'){
+        contador=preguntas[i].puntos;
+    }
+}
+printf("La respuesta correcta era la D.\n");
+
+printf("Actualizacion de puntuaciones:\n\n");
+for(i=0;i<jug;i++){
+    printf("%s %d\n", jugador[i].nombre, preguntas[i].puntos++);
+}
+printf("Siguiente pregunta.\n");
+
 break;
 }
 return 0;
