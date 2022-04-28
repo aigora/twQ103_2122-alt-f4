@@ -30,6 +30,8 @@ printf("2)EMPEZAR UNA PARTIDA\n");
 printf("Escoga una opcion:\n");
 scanf("%d", &opc);
 
+FILE*f;
+f=fopen("marcador","r");
 switch(opc){
 case 1:
     color(hConsole,7);
