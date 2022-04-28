@@ -8,13 +8,13 @@ struct TPreguntas{
 };
 struct TJugador{
     char nombre[50];
-    int puntos[1];
+    int puntos=0;
 };
 
 int main(){
 
 struct TPreguntas preguntas[TAM_MAX] = {"Cuantos anios duro la segunda guerra mundial?","B", 1};
-int res1,jug,i,peseta,dificultad,opc;
+int res1,jug,i,peseta,dificultad,opc, contador=0;
 char res2,b1, respuesta;
 struct TJugador jugador[TAM_MAX];
 
@@ -108,9 +108,9 @@ for(i=0;i<jug;i++){
 
 for(i=0;i<jug;i++){
 if(preguntas[i].respuesta == 'B'){
-    jugador[i].puntos=jugagor[i].puntos+1;
+    contador=jugagor[i].puntos+1;
     }else{
-    jugador[i].puntos=jugagor[i].puntos-1;
+    contador=jugagor[i].puntos-1;
     }
 }
 printf("La respuesta correcta era la B.\n");
