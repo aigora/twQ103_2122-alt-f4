@@ -5,17 +5,16 @@
 #define color SetConsoleTextAttribute// Para que simplemente pongamos color cada vez que cambiemos el color del texto
 struct TPreguntas{
   char pregunta[100], respuesta[100];
-  int puntos;
 };
 struct TJugador{
     char nombre[50];
+    int puntos[1];
 };
 
 int main(){
 
 struct TPreguntas preguntas[TAM_MAX] = {"Cuantos anios duro la segunda guerra mundial?","B", 1};
 int res1,jug,i,peseta,dificultad,opc;
-int puntos[jug], contador=0;
 char res2,b1, respuesta;
 struct TJugador jugador[TAM_MAX];
 
@@ -109,14 +108,16 @@ for(i=0;i<jug;i++){
 
 for(i=0;i<jug;i++){
 if(preguntas[i].respuesta == 'B'){
-        contador=preguntas[i].puntos++;
+    jugador[i].puntos=jugagor[i].puntos+1;
+    }else{
+    jugador[i].puntos=jugagor[i].puntos-1;
     }
 }
 printf("La respuesta correcta era la B.\n");
 
 printf("Actualizacion de puntuaciones:\n\n");
 for(i=0;i<jug;i++){
-    printf("%s %d\n", jugador[i].nombre, preguntas[i].puntos);
+    printf("%s %d\n", jugador[i].nombre, jagador[i].puntos);
 }
 printf("Siguiente pregunta.\n");
 
