@@ -8,7 +8,7 @@ int main(){
 
 int segundos=0,minutos=0,horas=0;
 printf("Presione la tecla enter para inicar el contador");
-system("pause -> NUL");
+system("pause -> NULL");
 
 while(1){
     segundos++;
