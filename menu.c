@@ -68,7 +68,8 @@ for(i=0;i<jug;i++){
     printf("Agente secreto %d: %s\n",i+1,jugador[i].nombre);
 }
 
-printf("Son correctos los nombres? Pon 0 si es que si y 1 si es que no.\n");
+
+printf("Son correctos los nombres de los agentes? Pon 0 si es que si y 1 si es que no.\n");
 fflush(stdin);
 scanf("%d",&res1);
 
@@ -87,7 +88,7 @@ printf("Perfecto, nombres guardados.\n");
 printf("Pon 0 si quieres jugar en modalidad facil, pon 1 si quieres jugar en dificil:\n");
 scanf("%d", &dificultad);
 if(dificultad==0){
-    printf("Usted ha elegido modalidad facil. Todos los jugadores tienen 5 pesetas al inicio del juego.\n");
+    printf("Usted ha elegido modalidad facil. Los agentes tienen 5 pesetas al inicio del juego.\n");
 }
 else if(dificultad==1){
     printf("Usted ha elegido modalidad dificil. Todos los jugadores tienen 3 pesetas al inicio del juego.\n");
