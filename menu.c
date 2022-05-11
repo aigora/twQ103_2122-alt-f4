@@ -65,7 +65,7 @@ for(i=0;i<jug;i++){
 }
 
 for(i=0;i<jug;i++){
-    printf("Jugador %d: %s\n",i+1,jugador[i].nombre);
+    printf("Agente secreto %d: %s\n",i+1,jugador[i].nombre);
 }
 
 printf("Son correctos los nombres? Pon 0 si es que si y 1 si es que no.\n");
