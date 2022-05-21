@@ -5,11 +5,30 @@
 
 //Haber chavales para el tema de las preguntas deberiamos hacer un fichero (ya creado llamado preguntas), para las respuestas deberiamos hacer un blucle. Es un porro lo se.
 struct TJugadores{
-    char nombre[50];
+    char nombre[50],opcion;
     int monedas;
 };
-void preguntas(char R_Correcta, int njug,struct TJugadores){
-
+void preguntas(char R_Correcta, int njug,struct TJugadores jugadores[]){
+int i,basura;
+char opcion;
+for(i=0;i<njug;i++){
+    fflush(stdin);
+    printf("Respuesta del jugador %d:\n",i+1);
+    gets(jugadores[i].opcion);
+}
+for(i=0;i<njug;i++){
+    if(jugadores[i].opcion==R_Correcta){
+        jugadores[i].monedas++;
+    }else{
+    jugadores[i].monedas--;
+    }
+}
+printf("\n La respuesta correcta es %c",R_Correcta);
+for(i=0;i<njug;i++){
+    fflush(stdin);
+    printf("Pesetas del jugador %d:%d",i+1,jugadores[i].monedas);
+}
+system("cls");
 }
 int main(){
 
@@ -79,6 +98,9 @@ printf("A)Recoger y guardar el paracaidas.\n");
 printf("B)Hidratarse y comer algo.\n");
 printf("C)Ponerse las gafas de vision nocturna.\n");
 printf("D)Lanzar una vengala para poder encontrarse.\n");
+
+preguntas(A,njug,TJugadores jugadores);
+
     }
     else {
         printf("Que desea entonces:\n\n");
