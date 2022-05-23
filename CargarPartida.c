@@ -10,7 +10,7 @@ struct TJugadores{
 };
 void preguntas(char R_Correcta, int njug,struct TJugadores jugadores[]){
 int i,basura;
-char opcion;
+
 for(i=0;i<njug;i++){
     fflush(stdin);
     printf("Respuesta del jugador %d:\n",i+1);
@@ -29,6 +29,7 @@ for(i=0;i<njug;i++){
     printf("Pesetas del jugador %d:%d",i+1,jugadores[i].monedas);
 }
 system("cls");
+return;
 }
 int main(){
 
@@ -87,9 +88,15 @@ printf("Pon 0 si quieres jugar en modalidad facil, pon 1 si quieres jugar en mod
 scanf("%d", &dificultad);
 if(dificultad==0){
     printf("Usted ha elegido modalidad facil. Los agentes tienen 5 pesetas al inicio del juego.\n");
+    for(i=0;i<njug;i++){
+        jugadores[i].monedas=5;
+    }
 }
 else if(dificultad==1){
     printf("Usted ha elegido modalidad dificil. Los agentes tienen 3 pesetas al inicio del juego.\n");
+    for(i=0;i<njug;i++){
+        jugadores[i].monedas=3;
+    }
 }
 printf("Preparaos porque la mision ya va a empezar. Los agentes ya han saltado en paracaidas y aterrizado cerca de las instalaciones.\n");
 printf("Una vez en el suelo que haceis:\n");
@@ -99,7 +106,7 @@ printf("B)Hidratarse y comer algo.\n");
 printf("C)Ponerse las gafas de vision nocturna.\n");
 printf("D)Lanzar una vengala para poder encontrarse.\n");
 
-preguntas(A,njug,TJugadores jugadores);
+preguntas(A,njug,jugadores);
 
     }
     else {
