@@ -56,7 +56,7 @@ case 1:
     scanf("%d", &op1);
     if (op1 == 1){
         printf("Borrando datos...\n");
-        printf("Cuantos jugadores van a haber en la partida (recuerde que el maximo son 4):\n");
+        printf("Cuantos jugadores va a haber en la partida (recuerde que el maximo son 4):\n");
         scanf("%d", &njug);
         while (4<njug){
     printf("Demasiados jugadores, recuerde que el maximo son 4.\n");
@@ -99,12 +99,103 @@ else if(dificultad==1){
     }
 }
 printf("Preparaos porque la mision ya va a empezar. Los agentes ya han saltado en paracaidas y aterrizado cerca de las instalaciones.\n");
+
+//Preguna 1
 printf("Una vez en el suelo que haceis:\n");
 
 printf("A)Recoger y guardar el paracaidas.\n");
 printf("B)Hidratarse y comer algo.\n");
 printf("C)Ponerse las gafas de vision nocturna.\n");
-printf("D)Lanzar una vengala para poder encontrarse.\n");
+printf("D)Lanzar una bengala para poder encontrarse.\n");
+
+//Pregunta 2
+printf("Ya es de noche, tras hablar con el resto de agentes, la decisión tomada por el equipo es:\n")
+
+printf("A)Dormir unas horas.\n");
+printf("B)Dormir hasta la mañana y entrar de día.\n");
+printf("C)Entrar a esa misma hora de la noche.\n");
+
+//Pregunta 3
+printf("Decididos a entrar a las instalaciones, los agentes se aseguran de fijar todas las cámaras y sus movimientos, y toman una decisión:\n")
+
+printf("A)Romperlas sigilosamente.\n");
+printf("B)Desactivarlas mediante un taser.\n");
+printf("C)Entrar y, conociendo sus movimientos, arriesgarse a esquivarlas sin romperlas ni hackearlas.\n");
+
+//Pregunta 4
+printf("Tras decidir qué hacer con las cámaras de vigilancia, hay que elegir una entrada:\n");
+
+printf("A)Entrada principal.\n");
+printf("B)Entrada trasera.\n");
+printf("C)Zona de basura.\n");
+
+//Pregunta 5
+printf("Tras elegir la entrada más óptima, encontráis a varios basureros charlando y tomándose un descanso en una habitación sin cámaras, qué haceis:\n");
+
+printf("A)Echar gas somnífero (de larga duración) y salir por la puerta más próxima al almacén.\n");
+printf("B)Matarlos con armas silenciadas y salir por la puerta más próxima al almacén.\n");
+printf("C)Entrar con sigilo y salir por la puerta más próxima al almacén.\n");
+
+//Pregunta 6
+printf("Una vez en el almacén, os encontráis con que está vacío, pero observáis una pantalla con números y huella dactilar y una puerta cerrada, decidís:\n");
+
+printf("A)Intentar acertar el código.\n");
+printf("B)Regresar al basurero y con papel adhesivo, cogerle la huella a uno de ellos y usarla en la pantalla.\n");
+printf("C)Romper el bloqueo de la puerta con cuidado.\n");
+
+//Pregunta 7
+printf("Tras abrir la puerta, os encontráis con 4 guardas armados frente a una puerta enorme con la misma pantalla que antes (hay cámaras), decidís:\n");
+
+printf("A)Matarlos con las armas silenciadas, coger sus huellas y abrir.\n");
+printf("B)Disparar a las cámaras con el taser, echar gas somnífero (de larga duración), coger sus huellas y abrir.\n");
+
+//Pregunta 8
+printf("Tras pasar la gran puerta, se observa un ropero y un pasillo largo que lleva a una habitación, vuestra decisión es:")
+
+printf("A)Entrar al ropero, cambiarse para hacerse pasar por trabajadores de las instalaciones, y seguidamente ir a la habitación que hay al final del pasillo.\n");
+printf("B)Volver atrás, ponerse la ropa de guardas de los guardas dormidos, y seguidamente ir a la habitación que hay al final del pasillo.\n");
+printf("C)Ir directamente a la habitación que hay al final del pasillo.\n");
+
+//Pregunta 9
+printf("Atravesáis la habitación, os ve el director y piensa que sois nuevos, por lo que os pide que subáis al despacho del jefe a presentaros.\n");
+printf("Subiendo, veis que unos metros antes de la habitación del presidente, se encuentra la fábrica de monedas y un despacho con todo tipo de archivos (el presidente os espera), decidis:\n");
+
+printf("A)Vais a presentaros al presidente, que duda de vosotros, y seguidamente entráis en la fábrica y despacho de archivos.\n");
+printf("B)Antes de entrar al despacho del presidente, taseais las cámaras, sacáis las armas y lo amenazáis para que os acompañe a la fábrica y despacho de archivos.\n");
+printf("C)Sabiendo que el presidente os espera, vais directos a la fábrica y despacho de archivos sin presentaros.\n");
+
+//Pregunta 10
+printf("Con el presidente a vuestra disposición, entráis a los archivos y os entrega el derecho de cambio de moneda y os indica donde desactivar todas las máquinas que hacen el cambio de peseta a euro.\n");
+printf("Pero también aprovecha y pulsa el botón de alerta roja para que cierren todas las puertas, vuestra próxima decisión es:\n");
+
+printf("A)Matar al presidente e intentar escapar.\n");
+printf("B)Utilizar al presidente como rehén para poder abrir las puertas y escapar.\n");
+printf("C)Escapar dejando al presidente en el despacho.\n");
+
+//Pregunta 11
+printf("Os llevais al presidete en contra de su voluntad, sacais las armas largas sin silenciador y comenzais la huida (la policía está avisada con incluso helicópteros), elegís:\n");
+
+printf("A)Salir por las puertas de huella por las que habéis entrado.\n");
+printf("B)Saltáis en paracaídas desde el despacho.\n");
+printf("C)Bajar por los tubos del aire acondicionado hasta la zona de basura.\n");
+
+//Pregunta 12
+printf("Al llegar a la zona de basura, las puertas están bloqueadas y hay 3 guardas con armas largas, qué hacéis:\n");
+
+printf("A)Disparáis a los guardas desde los tubos y utilizáis la sierra eléctrica para abrir un agujero la puerta.\n");
+printf("B)Bajáis de los tubos amenazándoles con matar al presidente si no os abren.\n");
+printf("C)Os entregáis y cuando os llevan fuera intentáis escapar.\n");
+printf("D)Echáis gas somnífero a los guardas y cuando estén dormidos utilizáis la sierra eléctrica para abrir un agujero la puerta \n");
+
+//Pregunta 13
+printf("Solo vuestros compañeros que están fuera saben que váis a salir por el sótano que hay tras la zona de la basura, os esperan ahí y huís:\n");
+
+printf("A)En coche hasta la costa más cercana donde os espera una lancha submarino.\n");
+printf("B)En coche hasta el helipuerto programado por vuestra organización donde os espera un helicóptero.\n");
+printf("C)En coche huyendo de la policía.\n");
+
+//Final
+printf("Conseguís huir con éxito y con los archivos de cambio de moneda y la base del funcionamiento de las máquinas.\n")
 
 preguntas(A,njug,jugadores);
 
@@ -120,7 +211,7 @@ preguntas(A,njug,jugadores);
             scanf("%d",&op1);
             if(op1 == 1){
                      printf("Despues de que el euro se volviera la moneda oficial del pais, hubo descontento por parte del Servicio Secreto ALT-F4.\n");
-        printf("Desde las sombras se estaba preparando una mision, una mision que cambiaria la historia. Los mejores agentes que podian haber,\n");
+        printf("Desde las sombras se estaba preparando una mision, una mision que cambiaria la historia. Los mejores agentes que podia haber,\n");
         printf("se embarcaron a la gran aventura de corromper el estado para reinstaurar la peseta como moneda oficila.\n");
         printf("Seran capaces los agentes de cumplir con su cometido.\n");
         printf("El juego trata de un escape room de preguntas y respuestas, donde los usuarios tendran que responder bien para poder avanzar.\n");
@@ -166,7 +257,7 @@ case 3:
     scanf("%d",&op1);
     if(op1 == 1){
         printf("Despues de que el euro se volviera la moneda oficial del pais, hubo descontento por parte del Servicio Secreto ALT-F4.\n");
-        printf("Desde las sombras se estaba preparando una mision, una mision que cambiaria la historia. Los mejores agentes que podian haber,\n");
+        printf("Desde las sombras se estaba preparando una mision, una mision que cambiaria la historia. Los mejores agentes que podia haber,\n");
         printf("se embarcaron a la gran aventura de corromper el estado para reinstaurar la peseta como moneda oficila.\n");
         printf("Seran capaces los agentes de cumplir con su cometido.\n");
         printf("El juego trata de un escape room de preguntas y respuestas, donde los usuarios tendran que responder bien para poder avanzar.\n");
