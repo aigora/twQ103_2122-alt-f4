@@ -111,7 +111,7 @@ printf("D)Lanzar una bengala para poder encontrarse.\n");
 //Pregunta 2
 printf("Ya es de noche, tras hablar con el resto de agentes, la decisión tomada por el equipo es:\n");
 
-printf("A)Dormir unas horas.\n");
+printf("A)Dormir unas horas y entrar por la madrugada.\n");
 printf("B)Dormir hasta la mañana y entrar de día.\n");
 printf("C)Entrar a esa misma hora de la noche.\n");
 
@@ -185,7 +185,7 @@ printf("Al llegar a la zona de basura, las puertas están bloqueadas y hay 3 guar
 printf("A)Disparáis a los guardas desde los tubos y utilizáis la sierra eléctrica para abrir un agujero la puerta.\n");
 printf("B)Bajáis de los tubos amenazándoles con matar al presidente si no os abren.\n");
 printf("C)Os entregáis y cuando os llevan fuera intentáis escapar.\n");
-printf("D)Echáis gas somnífero a los guardas y cuando estén dormidos utilizáis la sierra eléctrica para abrir un agujero la puerta \n");
+printf("D)Echáis gas somnífero a los guardas y cuando estén dormidos utilizáis la sierra eléctrica para abrir un agujero la puerta.\n");
 
 //Pregunta 13
 printf("Solo vuestros compañeros que están fuera saben que váis a salir por el sótano que hay tras la zona de la basura, os esperan ahí y huís:\n");
