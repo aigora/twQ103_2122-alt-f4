@@ -40,11 +40,11 @@ FILE *f1;
 HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);//El handle funciona haciendo referencia a un bloque de memoria, en este caso  a hConsole(es el que da colores al texto).
 
 color(hConsole,3);
-printf("\t\t\t        **************************************************************************************\n");
+printf("\t\t\t        ************************************************************************************\n");
 printf("\t\t\t\t*Bienvenido a la base de datos del servicio de inteligencia Alt-f4, que desea hacer*\n");
-printf("\t\t\t        **************************************************************************************\n\n");
+printf("\t\t\t        ************************************************************************************\n\n");
 color(hConsole,7);
-printf("1. Nueva partida.\n2. Continuar partida.\n3. Opciones.\n\n");
+printf("1. ==> Nueva partida.\n2. ==> Continuar partida.\n3. ==> Opciones.\n\n");
 
 scanf("%d", &op1);
 switch(op1){
@@ -109,14 +109,14 @@ printf("C)Ponerse las gafas de vision nocturna.\n");
 printf("D)Lanzar una bengala para poder encontrarse.\n");
 
 //Pregunta 2
-printf("Ya es de noche, tras hablar con el resto de agentes, la decisión tomada por el equipo es:\n")
+printf("Ya es de noche, tras hablar con el resto de agentes, la decisión tomada por el equipo es:\n");
 
 printf("A)Dormir unas horas.\n");
 printf("B)Dormir hasta la mañana y entrar de día.\n");
 printf("C)Entrar a esa misma hora de la noche.\n");
 
 //Pregunta 3
-printf("Decididos a entrar a las instalaciones, los agentes se aseguran de fijar todas las cámaras y sus movimientos, y toman una decisión:\n")
+printf("Decididos a entrar a las instalaciones, los agentes se aseguran de fijar todas las cámaras y sus movimientos, y toman una decisión:\n");
 
 printf("A)Romperlas sigilosamente.\n");
 printf("B)Desactivarlas mediante un taser.\n");
@@ -150,7 +150,7 @@ printf("A)Matarlos con las armas silenciadas, coger sus huellas y abrir.\n");
 printf("B)Disparar a las cámaras con el taser, echar gas somnífero (de larga duración), coger sus huellas y abrir.\n");
 
 //Pregunta 8
-printf("Tras pasar la gran puerta, se observa un ropero y un pasillo largo que lleva a una habitación, vuestra decisión es:")
+printf("Tras pasar la gran puerta, se observa un ropero y un pasillo largo que lleva a una habitación, vuestra decisión es:");
 
 printf("A)Entrar al ropero, cambiarse para hacerse pasar por trabajadores de las instalaciones, y seguidamente ir a la habitación que hay al final del pasillo.\n");
 printf("B)Volver atrás, ponerse la ropa de guardas de los guardas dormidos, y seguidamente ir a la habitación que hay al final del pasillo.\n");
@@ -195,9 +195,9 @@ printf("B)En coche hasta el helipuerto programado por vuestra organización donde
 printf("C)En coche huyendo de la policía.\n");
 
 //Final
-printf("Conseguís huir con éxito y con los archivos de cambio de moneda y la base del funcionamiento de las máquinas.\n")
+printf("Conseguís huir con éxito y con los archivos de cambio de moneda y la base del funcionamiento de las máquinas.\n");
 
-preguntas(A,njug,jugadores);
+
 
     }
     else {
