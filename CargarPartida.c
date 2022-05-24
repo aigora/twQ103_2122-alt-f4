@@ -100,7 +100,7 @@ else if(dificultad==1){
 }
 printf("Preparaos porque la mision ya va a empezar. Los agentes ya han saltado en paracaidas y aterrizado cerca de las instalaciones.\n");
 
-//Preguna 1
+//Pregunta 1
 printf("Una vez en el suelo que haceis:\n");
 
 printf("A)Recoger y guardar el paracaidas.\n");
