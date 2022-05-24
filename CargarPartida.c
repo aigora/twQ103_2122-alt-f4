@@ -111,7 +111,7 @@ printf("D)Lanzar una bengala para poder encontrarse.\n");
 //Pregunta 2
 printf("Ya es de noche, tras hablar con el resto de agentes, la decisión tomada por el equipo es:\n")
 
-printf("A)Dormir unas horas.\n");
+printf("A)Dormir unas horas y entrar por la madrugada.\n");
 printf("B)Dormir hasta la mañana y entrar de día.\n");
 printf("C)Entrar a esa misma hora de la noche.\n");
 
