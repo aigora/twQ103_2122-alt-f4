@@ -5,16 +5,16 @@
 
 //Haber chavales para el tema de las preguntas deberiamos hacer un fichero (ya creado llamado preguntas), para las respuestas deberiamos hacer un blucle. Es un porro lo se.
 struct TJugadores{
-    char nombre[50],opcion;
-    int monedas;
+    char nombre[50];
+    int monedas, opcion;
 };
-void preguntas(char R_Correcta, int njug,struct TJugadores jugadores[]){
+void preguntas(int R_Correcta, int njug){
 int i,basura;
-
+struct TJugadores jugadores[TAM_MAX];
 for(i=0;i<njug;i++){
     fflush(stdin);
     printf("Respuesta del jugador %d:\n",i+1);
-    gets(jugadores[i].opcion);
+    scanf("%d", &jugadores[i].opcion);
 }
 for(i=0;i<njug;i++){
     if(jugadores[i].opcion==R_Correcta){
@@ -33,7 +33,7 @@ return;
 }
 int main(){
 
-int op1, op2, njug, i, cont, res, cont1, cont2, res1, dificultad;
+int op1, op2, njug, i, cont, res, cont1, cont2, res1, dificultad, respuesta;
 char dif[50];
 struct TJugadores jugadores[TAM_MAX];
 FILE *f1;
@@ -56,6 +56,11 @@ case 1:
     scanf("%d", &op1);
     if (op1 == 1){
         printf("Borrando datos...\n");
+        f1 = fopen("marcador.txt", "w");
+        if(f1 == NULL){
+            printf("Error de lectura en la base de datos.\n");
+            return 0;
+        }
         printf("Cuantos jugadores va a haber en la partida (recuerde que el maximo son 4):\n");
         scanf("%d", &njug);
         while (4<njug){
@@ -98,101 +103,124 @@ else if(dificultad==1){
         jugadores[i].monedas=3;
     }
 }
+for(i=0;i<njug;i++){
+    fprintf("%s %d", jugadores[i].nombre, jugadores[i].monedas);
+}
 printf("Preparaos porque la mision ya va a empezar. Los agentes ya han saltado en paracaidas y aterrizado cerca de las instalaciones.\n");
 
-//Pregunta 1
-printf("Una vez en el suelo que haceis:\n");
 
-printf("A)Recoger y guardar el paracaidas.\n");
-printf("B)Hidratarse y comer algo.\n");
-printf("C)Ponerse las gafas de vision nocturna.\n");
-printf("D)Lanzar una bengala para poder encontrarse.\n");
+//Pregunta 1
+printf("Una vez en el suelo que haceis:\n\n");
+
+printf("1)Recoger y guardar el paracaidas.\n");
+printf("2)Hidratarse y comer algo.\n");
+printf("3)Ponerse las gafas de vision nocturna.\n");
+printf("4)Lanzar una bengala para poder encontrarse.\n\n");
+for(i=0;i<njug;i++){
+    printf("Elija su respuesta jugador %d:\n", i+1);
+    fflush(stdin);
+    scanf("%d",&jugadores[i].opcion);
+}
 
 //Pregunta 2
-printf("Ya es de noche, tras hablar con el resto de agentes, la decisión tomada por el equipo es:\n");
+printf("\n\nYa es de noche, tras hablar con el resto de agentes, la decisión tomada por el equipo es:\n\n");
 
-printf("A)Dormir unas horas y entrar por la madrugada.\n");
-printf("B)Dormir hasta la mañana y entrar de día.\n");
-printf("C)Entrar a esa misma hora de la noche.\n");
+printf("1)Dormir unas horas y entrar por la madrugada.\n");
+printf("2)Dormir hasta la mañana y entrar de día.\n");
+printf("3)Entrar a esa misma hora de la noche.\n\n");
+preguntas(3, njug);
+for(i=0;i<njug;i++){
+    while(jugadores[i].opcion!=3){
+        if(jugadores[i].opcion==1){
+        printf("Entrar de madrugada no es la mejor opción. Prueba de nuevo.\n");
+        printf("Respuesta:\n");
+        scanf("%d", &jugadores[i].opcion);
+        }   else if(jugadores[i].opcion==2){
+            printf("Entrar a plena luz del dia no es la mejor idea. Prueba de nuevo.\n");
+            printf("Respuesta:\n");
+            scanf("%d", &jugadores[i].opcion);
+            }
+    }
+}
 
 //Pregunta 3
 printf("Decididos a entrar a las instalaciones, los agentes se aseguran de fijar todas las cámaras y sus movimientos, y toman una decisión:\n");
 
-printf("A)Romperlas sigilosamente.\n");
-printf("B)Desactivarlas mediante un taser.\n");
-printf("C)Entrar y, conociendo sus movimientos, arriesgarse a esquivarlas sin romperlas ni hackearlas.\n");
+printf("1)Romperlas sigilosamente.\n");
+printf("2)Desactivarlas mediante un taser.\n");
+printf("3)Entrar y, conociendo sus movimientos, arriesgarse a esquivarlas sin romperlas ni hackearlas.\n");
 
 //Pregunta 4
 printf("Tras decidir qué hacer con las cámaras de vigilancia, hay que elegir una entrada:\n");
 
-printf("A)Entrada principal.\n");
-printf("B)Entrada trasera.\n");
-printf("C)Zona de basura.\n");
+printf("1)Entrada principal.\n");
+printf("2)Entrada trasera.\n");
+printf("3)Zona de basura.\n");
 
 //Pregunta 5
 printf("Tras elegir la entrada más óptima, encontráis a varios basureros charlando y tomándose un descanso en una habitación sin cámaras, qué haceis:\n");
 
-printf("A)Echar gas somnífero (de larga duración) y salir por la puerta más próxima al almacén.\n");
-printf("B)Matarlos con armas silenciadas y salir por la puerta más próxima al almacén.\n");
-printf("C)Entrar con sigilo y salir por la puerta más próxima al almacén.\n");
+printf("1)Echar gas somnífero (de larga duración) y salir por la puerta más próxima al almacén.\n");
+printf("2)Matarlos con armas silenciadas y salir por la puerta más próxima al almacén.\n");
+printf("3)Entrar con sigilo y salir por la puerta más próxima al almacén.\n");
 
 //Pregunta 6
 printf("Una vez en el almacén, os encontráis con que está vacío, pero observáis una pantalla con números y huella dactilar y una puerta cerrada, decidís:\n");
 
-printf("A)Intentar acertar el código.\n");
-printf("B)Regresar al basurero y con papel adhesivo, cogerle la huella a uno de ellos y usarla en la pantalla.\n");
-printf("C)Romper el bloqueo de la puerta con cuidado.\n");
+printf("1)Intentar acertar el código.\n");
+printf("2)Regresar al basurero y con papel adhesivo, cogerle la huella a uno de ellos y usarla en la pantalla.\n");
+printf("3)Romper el bloqueo de la puerta con cuidado.\n");
 
 //Pregunta 7
 printf("Tras abrir la puerta, os encontráis con 4 guardas armados frente a una puerta enorme con la misma pantalla que antes (hay cámaras), decidís:\n");
 
-printf("A)Matarlos con las armas silenciadas, coger sus huellas y abrir.\n");
-printf("B)Disparar a las cámaras con el taser, echar gas somnífero (de larga duración), coger sus huellas y abrir.\n");
+printf("1)Matarlos con las armas silenciadas, coger sus huellas y abrir.\n");
+printf("2)Disparar a las cámaras con el taser, echar gas somnífero (de larga duración), coger sus huellas y abrir.\n");
 
 //Pregunta 8
 printf("Tras pasar la gran puerta, se observa un ropero y un pasillo largo que lleva a una habitación, vuestra decisión es:");
 
-printf("A)Entrar al ropero, cambiarse para hacerse pasar por trabajadores de las instalaciones, y seguidamente ir a la habitación que hay al final del pasillo.\n");
-printf("B)Volver atrás, ponerse la ropa de guardas de los guardas dormidos, y seguidamente ir a la habitación que hay al final del pasillo.\n");
-printf("C)Ir directamente a la habitación que hay al final del pasillo.\n");
+printf("1)Entrar al ropero, cambiarse para hacerse pasar por trabajadores de las instalaciones, y seguidamente ir a la habitación que hay al final del pasillo.\n");
+printf("2)Volver atrás, ponerse la ropa de guardas de los guardas dormidos, y seguidamente ir a la habitación que hay al final del pasillo.\n");
+printf("3)Ir directamente a la habitación que hay al final del pasillo.\n");
 
 //Pregunta 9
 printf("Atravesáis la habitación, os ve el director y piensa que sois nuevos, por lo que os pide que subáis al despacho del jefe a presentaros.\n");
 printf("Subiendo, veis que unos metros antes de la habitación del presidente, se encuentra la fábrica de monedas y un despacho con todo tipo de archivos (el presidente os espera), decidis:\n");
 
-printf("A)Vais a presentaros al presidente, que duda de vosotros, y seguidamente entráis en la fábrica y despacho de archivos.\n");
-printf("B)Antes de entrar al despacho del presidente, taseais las cámaras, sacáis las armas y lo amenazáis para que os acompañe a la fábrica y despacho de archivos.\n");
-printf("C)Sabiendo que el presidente os espera, vais directos a la fábrica y despacho de archivos sin presentaros.\n");
+printf("1)Vais a presentaros al presidente, que duda de vosotros, y seguidamente entráis en la fábrica y despacho de archivos.\n");
+printf("2)Antes de entrar al despacho del presidente, taseais las cámaras, sacáis las armas y lo amenazáis para que os acompañe a la fábrica y despacho de archivos.\n");
+printf("3)Sabiendo que el presidente os espera, vais directos a la fábrica y despacho de archivos sin presentaros.\n");
 
 //Pregunta 10
 printf("Con el presidente a vuestra disposición, entráis a los archivos y os entrega el derecho de cambio de moneda y os indica donde desactivar todas las máquinas que hacen el cambio de peseta a euro.\n");
 printf("Pero también aprovecha y pulsa el botón de alerta roja para que cierren todas las puertas, vuestra próxima decisión es:\n");
 
-printf("A)Matar al presidente e intentar escapar.\n");
-printf("B)Utilizar al presidente como rehén para poder abrir las puertas y escapar.\n");
-printf("C)Escapar dejando al presidente en el despacho.\n");
+printf("1)Matar al presidente e intentar escapar.\n");
+printf("2)Utilizar al presidente como rehén para poder abrir las puertas y escapar.\n");
+printf("3)Escapar dejando al presidente en el despacho.\n");
 
 //Pregunta 11
 printf("Os llevais al presidete en contra de su voluntad, sacais las armas largas sin silenciador y comenzais la huida (la policía está avisada con incluso helicópteros), elegís:\n");
 
-printf("A)Salir por las puertas de huella por las que habéis entrado.\n");
-printf("B)Saltáis en paracaídas desde el despacho.\n");
-printf("C)Bajar por los conductos del aire acondicionado hasta la zona de basura.\n");
+printf("1)Salir por las puertas de huella por las que habéis entrado.\n");
+printf("2)Saltáis en paracaídas desde el despacho.\n");
+printf("3)Bajar por los conductos del aire acondicionado hasta la zona de basura.\n");
 
 //Pregunta 12
 printf("Al llegar a la zona de basura, las puertas están bloqueadas y hay 3 guardas con armas largas, qué hacéis:\n");
 
-printf("A)Disparáis a los guardas desde los tubos y utilizáis la sierra eléctrica para abrir un agujero la puerta.\n");
-printf("B)Bajáis de los conductos amenazándoles con matar al presidente si no os abren.\n");
-printf("C)Os entregáis y cuando os llevan fuera intentáis escapar.\n");
-printf("D)Echáis gas somnífero a los guardas y cuando estén dormidos utilizáis la sierra eléctrica para abrir un agujero la puerta.\n");
+printf("1)Disparáis a los guardas desde los tubos y utilizáis la sierra eléctrica para abrir un agujero la puerta.\n");
+printf("2)Bajáis de los conductos amenazándoles con matar al presidente si no os abren.\n");
+printf("3)Os entregáis y cuando os llevan fuera intentáis escapar.\n");
+printf("4)Echáis gas somnífero a los guardas y cuando estén dormidos utilizáis la sierra eléctrica para abrir un agujero la puerta.\n");
 
 //Pregunta 13
 printf("Solo vuestros compañeros que están fuera saben que váis a salir por el sótano que hay tras la zona de la basura, os esperan ahí y huís:\n");
 
-printf("A)En coche hasta la costa más cercana donde os espera una lancha submarino.\n");
-printf("B)En coche hasta el helipuerto programado por vuestra organización donde os espera un helicóptero.\n");
-printf("C)En coche huyendo de la policía.\n");
+printf("1)En coche hasta la costa más cercana donde os espera una lancha submarino.\n");
+printf("2)En coche hasta el helipuerto programado por vuestra organización donde os espera un helicóptero.\n");
+printf("3)En coche huyendo de la policía.\n");
 
 //Final
 printf("Conseguís huir con éxito y con los archivos de cambio de moneda y la base del funcionamiento de las máquinas.\n");
