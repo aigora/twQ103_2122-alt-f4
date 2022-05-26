@@ -5,8 +5,8 @@
 
 //Haber chavales para el tema de las preguntas deberiamos hacer un fichero (ya creado llamado preguntas), para las respuestas deberiamos hacer un blucle. Es un porro lo se.
 struct TJugadores{
-    char nombre[50], opcion;
-    int monedas;
+    char nombre[50];
+    int monedas, opcion;
 };
 
 int eliminar_jug(int njug){
@@ -26,7 +26,7 @@ int i;
 for(i=0;i<njug;i++){
     fflush(stdin);
     printf("Respuesta del jugador %d:\n",i+1);
-    gets(jugadores[i].opcion);
+    scanf("%d",&jugadores[i].opcion);
 }
 for(i=0;i<njug;i++){
     if(jugadores[i].opcion==R_Correcta){
