@@ -3,30 +3,26 @@
 #include<windows.h>
 #define color SetConsoleTextAttribute// Para que simplemente pongamos color cada vez que cambiemos el color del texto
 
-//Haber chavales para el tema de las preguntas deberiamos hacer un fichero (ya creado llamado preguntas), para las respuestas deberiamos hacer un blucle. Es un porro lo se.
+
 struct TJugadores{
     char nombre[50];
     int monedas, opcion;
 };
 
-int eliminar_jug(int njug){
-int i,eliminado=0;
-struct TJugadores jugadores[TAM_MAX];
-for(i=0;i<njug;i++){
-    if(jugadores[i].monedas<=0)
-        eliminado++;
-}
-return eliminado;
-}
 
-void preguntas(int R_Correcta, int njug,struct TJugadores jugadores){
+void preguntas(int R_Correcta, int njug,struct TJugadores jugadores[]){
 int i;
 
-//njug=njug-eliminar_jug(njug);
+
 for(i=0;i<njug;i++){
+    if(jugadores[i].monedas>0){
     fflush(stdin);
     printf("Respuesta del jugador %d:\n",i+1);
     scanf("%d",&jugadores[i].opcion);
+    }else if(jugadores[i].monedas<=0){
+    jugadores[i].monedas=0;
+    printf("\nEl agente %s ha caido en combate\n",jugadores[i].nombre);
+    }
 }
 for(i=0;i<njug;i++){
     if(jugadores[i].opcion==R_Correcta){
@@ -37,11 +33,8 @@ for(i=0;i<njug;i++){
 }
 printf("\n La respuesta correcta es %d)\n",R_Correcta);
 for(i=0;i<njug;i++){
-    //fflush(stdin);
-    printf("Pesetas del agente %s:%d\n",jugadores[i].nombre,jugadores[i].monedas);
+    printf("\nPesetas del agente %s:%d\n",jugadores[i].nombre,jugadores[i].monedas);
 }
-
-
 return;
 }
 int main(){
@@ -144,7 +137,7 @@ printf("3)Entrar a esa misma hora de la noche.\n\n");
 preguntas(1,njug,jugadores);
 
 //Pregunta 3
-printf("Decididos a entrar a las instalaciones, los agentes se aseguran de fijar todas las cámaras y sus movimientos, y toman una decision:\n");
+printf("Decididos a entrar a las instalaciones, los agentes se aseguran de fijar todas las camaras y sus movimientos, y toman una decision:\n");
 
 printf("1)Romperlas sigilosamente.\n");
 printf("2)Desactivarlas mediante un taser.\n");
@@ -153,7 +146,7 @@ printf("3)Entrar y, conociendo sus movimientos, arriesgarse a esquivarlas sin ro
 preguntas(2,njug,jugadores);
 
 //Pregunta 4
-printf("Tras decidir qué hacer con las camaras de vigilancia, hay que elegir una entrada:\n");
+printf("Tras decidir que hacer con las camaras de vigilancia, hay que elegir una entrada:\n");
 
 printf("1)Entrada principal.\n");
 printf("2)Entrada trasera.\n");
