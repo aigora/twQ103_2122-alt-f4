@@ -25,7 +25,7 @@ for(i=0;i<njug;i++){
     }
 }
 for(i=0;i<njug;i++){
-    if(jugadores[i].opcion=R_Correcta){
+    if(jugadores[i].opcion==R_Correcta){
         jugadores[i].monedas++;
     }else{
     jugadores[i].monedas--;
